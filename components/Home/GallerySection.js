@@ -57,7 +57,7 @@ const GallerySection = ({images}) => {
     <>
       <Gallery {...{ activeImage, setActiveImage }} />
       <SectionLayout title={"Gallery"} classNames={"h-[600px] lg:h-[800px]"}>
-        <motion.div
+        <div
         id="gallery"
           ref={container}
           className="w-full h-full flex flex-nowrap justify-start items-center gap-[2rem] !scroll-smooth  overflow-auto no-scrollbar snap-x"
@@ -72,7 +72,7 @@ const GallerySection = ({images}) => {
               }}
             />
           ))}
-        </motion.div>
+        </div>
         <div className="w-[200px] md:w-[400px] h-[6px] bg-primary absolute bottom-[3rem] lg:bottom-[6rem] left-1/2 -translate-x-1/2">
           <motion.div
             style={{ width: scaleX }}
