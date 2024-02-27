@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import LoadedImage from "../common/LoadedImage";
-import coverImage from '../../public/images/broto.jpg'
+
 const HomeTop = () => {
   return (
     <div id="home" className="w-full font-light relative mb-[3rem] min-h-screen">
@@ -44,9 +44,10 @@ const HomeTop = () => {
         <div className="h-full w-full relative">
           <LoadedImage
             priority={true}
-            src={coverImage}
+            src={"/images/broto.jpg"}
             className="w-full brightness-75 h-full object-cover"
-            // fill={true}
+            fill={true}
+            
             alt="bg"
           />
         </div>
