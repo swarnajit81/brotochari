@@ -44,7 +44,7 @@ const HomeTop = () => {
         <div className="h-full w-full relative">
           <LoadedImage
             priority={true}
-            src={"/images/broto.jpg"}
+            src={"/images/broto.png"}
             className="w-full brightness-75 h-full object-cover"
             fill={true}
             
