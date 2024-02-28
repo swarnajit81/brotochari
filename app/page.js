@@ -5,10 +5,15 @@ import LeaderBoard from "@/components/Home/LeaderBoard";
 import { getImages } from "@/lib/actions";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Suspense } from "react";
+import cloudinary from "cloudinary";
 
 const ImageSlider = async () => {
-  const results = await getImages();
-  return <GallerySection images={results} />;
+  const results = await cloudinary.v2.search
+    .expression("resource_type:image")
+    .sort_by("public_id", "asc")
+    .max_results(30)
+    .execute();
+  return <GallerySection images={results.resources} />;
 };
 
 export default function Home() {

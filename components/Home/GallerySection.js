@@ -64,9 +64,9 @@ const GallerySection = ({images}) => {
         >
           {images?.map((el, i) => (
             <Slide
-              key={i}
+              key={el.public_id}
               {...{
-                i:el.public_id,
+             
                 slide: el,
                 handleImageClick: () => handleImageClick(el),
               }}

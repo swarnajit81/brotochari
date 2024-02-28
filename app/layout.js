@@ -3,6 +3,7 @@ import "./globals.css";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import BottomNav from "@/components/BottomNav";
+import LoadedImage from "@/components/common/LoadedImage";
 
 export const metadata = {
   title: "Create Next App",
@@ -17,15 +18,15 @@ const bebas = Antonio({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${bebas.variable} font-bebas`}>
+      <body className={`${bebas.variable} font-bebas  bg-accent_blue`}>
         <Navbar />
         <div className="w-full h-screen fixed top-0 left-0 z-[-1]">
-          <Image
+          <LoadedImage
             alt="bg"
             src={"/images/background.png"}
-            fill
+            fill={true}
             objectFit="cover"
-            priority
+            priority={true}
           />
         </div>
 
