@@ -4,6 +4,8 @@ import CloudinaryImage from "@/components/common/CloudinaryImage";
 import { Suspense } from "react";
 import GridLoader from "@/components/loaders/GridLoader";
 
+export const dynamic = 'force-dynamic'
+
 const GridContainer = async () => {
   const results = await cloudinary.v2.search
     .expression("resource_type:image")

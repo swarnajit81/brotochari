@@ -7,6 +7,8 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { Suspense } from "react";
 import cloudinary from "cloudinary";
 
+export const dynamic = "force-dynamic";
+
 const ImageSlider = async () => {
   const results = await cloudinary.v2.search
     .expression("resource_type:image")
