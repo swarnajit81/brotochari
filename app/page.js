@@ -2,10 +2,11 @@ import Fixtures from "@/components/Home/Fixtures";
 import GallerySection from "@/components/Home/GallerySection";
 import HomeTop from "@/components/Home/HomeTop";
 import LeaderBoard from "@/components/Home/LeaderBoard";
-import { getImages } from "@/lib/actions";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Suspense } from "react";
 import cloudinary from "cloudinary";
+import { getSession } from "@/lib/actions";
+import LoginModal from "@/components/common/LoginModal";
 
 export const dynamic = "force-dynamic";
 
@@ -18,9 +19,13 @@ const ImageSlider = async () => {
   return <GallerySection images={results.resources} />;
 };
 
-export default function Home() {
+export default async function Home() {
+  const session = getSession()
+
+  
   return (
     <>
+    
       <HomeTop />
       <Suspense fallback={<SliderSkeletonLoader />}>
         <ImageSlider />
